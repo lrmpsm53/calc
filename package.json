@@ -11,7 +11,7 @@
   "bin": {
     "calc": "./bin/index.js"
   },
-  "git": "git:lrmpsm53/",
+  "git": "git@github.com:lrmpsm53/calc.git",
   "author": "",
   "license": "ISC",
   "dependencies": {

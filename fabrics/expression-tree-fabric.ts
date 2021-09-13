@@ -1,10 +1,10 @@
-import { Operator } from './operators/operator';
+import { Operator } from '../operators/operator';
 import { AbstractExpressionToken, OperandToken, OperatorToken } from './expression-tokens-forest-fabric';
-import { ExpressionNode } from './expression-node/expression-node';
-import { OperatorNode } from './expression-node/operator-node';
-import { OperatorsManagement } from './operators/operators-management';
-import { SearchExpressionNodeByIndex, SearchOfDeepestExpressionNodeByOffset } from './expression-node/expression-node-search';
-import { OperandNode } from './expression-node/operand-node';
+import { ExpressionNode } from '../expression-node/expression-node';
+import { OperatorNode } from '../expression-node/operator-node';
+import { OperatorsManagement } from '../operators/operators-management';
+import { SearchExpressionNodeByIndex, SearchOfDeepestExpressionNodeByOffset } from '../expression-node/expression-node-search';
+import { OperandNode } from '../expression-node/operand-node';
 
 
 
