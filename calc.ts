@@ -11,5 +11,11 @@ export function calc(expression: string): number|undefined {
   const tokens = expressionTrees.create(chars);
   const manager = new OperatorsManagement(buildInOperators);
   const fabric = new ExpressionTreeFabric(tokens, manager);
-  return fabric.create()?.getValue();
+  const result = fabric.create()?.getValue();
+  if (result === (Infinity || -Infinity || NaN)) {
+    throw new CalcError();
+  }
+  return result;
 }
+
+class CalcError extends Error {}

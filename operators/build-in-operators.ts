@@ -51,9 +51,21 @@ export const buildInOperators: Operator[] = [
     calculate: (a) => Math.sin(a)
   },
   {
-    name: '||',
+    name: 'or',
     arity: 2,
     priority: 1,
     calculate: (a, b) => a || b
-  }
+  },
+  {
+    name: 'and',
+    arity: 2,
+    priority: 2,
+    calculate: (a, b) => a && b
+  },
+  {
+    name: 'not',
+    arity: 1,
+    priority: 2,
+    calculate: (a) => Number(!a)
+  },
 ];

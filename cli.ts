@@ -8,9 +8,13 @@ export async function main(): Promise<void> {
   let continueCalc = true;
   while (continueCalc) {
     console.clear();
-    const {expression} = await prompt([ expressionQuestion ]);
-    const result = calc(expression);
-    console.log(`${expression}=${result}`);
+    const { expression } = await prompt([ expressionQuestion ]);
+    try {
+      const result = calc(expression);
+      console.log(`${expression}=${result}`);
+    } catch {
+      console.log('Неправильно введено выражение');
+    }
     continueCalc = (await prompt([ continueQuestion ]))['continueCalc'];
   }
 }
