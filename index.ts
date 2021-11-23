@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-import { main } from './cli';
+import { main } from './src/cli';
 main().then();

@@ -15,8 +15,7 @@ class ExpressionNodeSearch {
     if (rightChild) {
       results.push(this.search(rightChild));
     }
-    const node = results.find(elem => elem);
-    return node ?? null;
+    return results.find(elem => elem) ?? null;
   }
   protected onIteration?(expressionNode: ExpressionNode): ExpressionNode|null;
 }
@@ -36,13 +35,12 @@ export class SearchOfDeepestExpressionNodeByOffset extends ExpressionNodeSearch 
   }
   protected override onIteration(expressionNode: ExpressionNode): ExpressionNode|null {
     const { startIndex, offset } = this.params;
-    if (expressionNode.index > startIndex) {
-      if (!expressionNode.leftChild && Math.abs(expressionNode.index - startIndex) === offset) {
+    const currentOffset = Math.abs(expressionNode.index - startIndex);
+    if (currentOffset === offset) {
+      if (expressionNode.index > startIndex && !expressionNode.leftChild) {
         return expressionNode;
       }
-    }
-    if (expressionNode.index < startIndex) {
-      if (!expressionNode.rightChild && Math.abs(expressionNode.index - startIndex) === offset) {
+      if (expressionNode.index < startIndex && !expressionNode.rightChild) {
         return expressionNode;
       }
     }

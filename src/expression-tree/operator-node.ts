@@ -4,13 +4,13 @@ import { ExpressionNode } from './expression-node';
 
 
 
-export class OperatorNode implements ExpressionNode {
-  public leftChild?: ExpressionNode;
-  public rightChild?: ExpressionNode;
+export class OperatorNode extends ExpressionNode {
   public constructor(
     public readonly index: number,
     public readonly operator: Operator
-  ) {}
+  ) {
+    super();
+  }
   public getValue(): number {
     const operandsValues = this.getOperandValues();
     return this.operator.calculate(...operandsValues);

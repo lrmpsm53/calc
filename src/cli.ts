@@ -11,7 +11,7 @@ export async function main(): Promise<void> {
     const { expression } = await prompt([ expressionQuestion ]);
     try {
       const result = calc(expression);
-      console.log(`${expression}=${result}`);
+      console.log(typeof result === 'number' ? `${expression} = ${result}` : 0);
     } catch {
       console.log('Неправильно введено выражение');
     }
