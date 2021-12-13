@@ -1,8 +1,8 @@
-import { ExpressionNode } from './expression-node';
 import { Operator } from '../operators/operator';
+
+import { ExpressionNode } from './expression-node';
 import { OperatorNode } from './operator-node';
 import { SearchExpressionNodeByIndex } from './expression-node-search';
-
 import { ExpressionTokens } from './expression-tokens';
 
 
