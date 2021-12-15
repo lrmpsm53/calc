@@ -1,6 +1,5 @@
 import { OperatorsManagement } from '../operators/operators-management';
 import { Operator } from '../operators/operator';
-
 import { AbstractExpressionToken, OperandToken, OperatorToken } from '../chars-forests/expression-tokens-forest-fabric';
 
 
@@ -18,7 +17,8 @@ export class ExpressionTokens {
     this.operatorsPriorityLevels = this.operatorsManagement.getOperatorsPriorityLevels();
   }
   public getOperandMaxId(): number {
-    return this.operands.length - 1;
+    const length = this.operands.length;
+    return length > 1 ? length - 1 : length;
   }
   public defineOperator({token, index}: OperatorTokenAndIndex): Operator {
     const operandsAmount = this.getOperandsAmount(index);
